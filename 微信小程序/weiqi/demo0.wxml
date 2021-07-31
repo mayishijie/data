@@ -1,0 +1,59 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+
+<canvas id="weiqi"  type="2d" bindtouchstart="mousedownHandler" 
+  style="width:{{weiqiCW}}px;height:{{weiqiCH}}px;margin:auto;"></canvas>
+
+<view>
+  dddddd
+</view>
+
+<view class="btns">
+  
+  <!-- <button type="primary" class="btn" bindtap="recording">{{recordingDesc}}</button> -->
+  <button type="primary" class="btn" bindtap="closeDrawModel">关闭绘图模式</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="4">画数字</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="5">画字母</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="6">画三角形</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="7">画X</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="8">画正方形</button>
+  <button type="primary" class="btn" bindtap="setShapeColor" data-shape="9">画圆</button>
+
+  <button type="primary" class="btn" bindtap="drawDyNum" data-shape="4">画动态数字</button>
+  <button type="primary" class="btn" bindtap="playDraw">播放</button>
+  <button type="primary" class="btn" bindtap="toastf">弹出狂test</button>
+  <button type="primary" class="btn" bindtap="confirmDownStone">确认落子</button>
+
+  <van-cell-group>
+    <van-field
+      value="{{ chessValue }}"
+      placeholder="请输入棋子坐标,例如Bss"
+      border="{{ true }}"
+      bind:change="onChange"
+    />
+  </van-cell-group>
+  <button type="primary" class="btn" bindtap="setDynGoCross">确认画在这里</button>
+  <button type="primary" class="btn" bindtap="crossxyDown">确认落在这里</button>
+  <button type="primary" class="btn" bindtap="showFlag">{{showFlagDesc}}</button>
+
+  <button type="primary" class="btn" bindtap="regret">悔一手</button>
+  <button type="primary" class="btn" bindtap="pass">过一手</button>
+
+  <button type="primary" class="btn" bindtap="gg">重新开始</button>
+  <button type="primary" class="btn" bindtap="fupan">佐為vs塔矢亮 复盘</button>
+  
+  <button type="primary" class="btn" bindtap="lastStep">上一手</button>
+  <button type="primary" class="btn" bindtap="nextStep">下一手</button>
+  <button type="primary" class="btn" bindtap="go2Step">去第111手</button>
+  <button type="primary" class="btn" bindtap="terrain">形势判断</button>
+  <button type="primary" class="btn" bindtap="gg">重新开始</button>
+  <!-- <button type="primary" class="btn" bindtap="rotate">顺时针90度</button> -->
+
+
+  <!-- 打谱专用 -->
+  <button type="primary" class="btn" bindtap="chosDapuFlag">{{dapuFlagDesc}}</button>
+  <button type="primary" class="btn" bindtap="dapuChoseChessColor">{{choseChessColorDesc}}</button>
+  <button type="primary" class="btn" bindtap="getPan">获取棋谱没有先后之分</button>
+  <button type="primary" class="btn" bindtap="getStep">获取走的步骤有先后之分</button>
+</view>
+
